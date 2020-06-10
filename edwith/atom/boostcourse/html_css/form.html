@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <form action="index.html" method="get">
+      <h1>form 관련 요소</h1>
+      <fieldset>
+        <legend>기본 정보</legend>
+          <label for="userid">아이디 : </label><input type="text" placeholder="영문으로 써주세요" id="userid"><br>
+          <label for="userpw">패스워드 : </label> <input type="password" id="userpw"><br>
+          성별 : <label for="female">여자</label> <input type="radio" name="gender" id="female" checked>
+                 <label for="male">남자</label><input type="radio" name="gender" id="male"><br>
+      </fieldset>
+
+      <fieldset>
+        <legend>부가 정보</legend>
+          취미 : <label for="movie">영화감상</label><input type="checkbox" name="hobby" id="movie">
+                음악감상 <input type="checkbox" name="hobby">
+                 요리 <input type="checkbox" name="hobby"><br>
+          지역 : <select>
+                  <option>서울</option>
+                  <option>경기</option>
+                  <option>강원</option>
+                  <option selected>제주</option>
+                </select><br>
+          자기소개 : <textarea cols="30" rows="5" placeholder="자기소개 입력칸"></textarea><br>
+        </fieldset>
+
+      <button type="submit">전송</button>
+      <button type="reset">취소</button><br>
+      첨부파일 :  <input type="file"><br>
+      <input type="submit" value="전송">&nbsp;
+      <input type="reset" value="취소">&nbsp;
+      <input type="button" value="등록"><br><br>
+      <input type="image" src="C:/Users/user/Desktop/images/login.png" alt="로그인" width="100px" height="30px"><br>
+    </form>
+  </body>
+</html>
