@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>가위바위보</title>
+	<style type="text/css">
+		table{
+			border-collapse: collapse;
+		}
+		td{
+			border: 1px solid black;
+			width: 20px;
+			height: 20px;
+		}
+	</style>
+</head>
+<body>
+	<input type="number" id="hor" placeholder="가로" value="10">
+	<input type="number" id="ver" placeholder="세로" value="10">
+	<input type="number" id="mine" placeholder="지뢰" value="10">
+	<button id="exec" class="btn">실행</button>
+	<table id="table">
+		<thead>
+			<tr>
+				<td><span id="timer">0</span>초</td>				
+			</tr>			
+		</thead>
+		<tbody></tbody>
+	</table>
+	<script src="지뢰찾기.js"></script>
+</body>
+</html>
