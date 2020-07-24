@@ -1,3 +1,5 @@
+var tbody = document.querySelector("#table tbody");
+var dataset = [];
 document.querySelector("#exec").addEventListener("click", function(){
 	var hor = parseInt(document.querySelector("#hor").value);
 	var ver = parseInt(document.querySelector("#ver").value);
@@ -20,8 +22,6 @@ document.querySelector("#exec").addEventListener("click", function(){
 	console.log(셔플);
 
 	//지뢰 테이블 만들기
-	var dataset = [];
-	var tbody = document.querySelector("#table tbody");
 	for(var i=0; i<ver; i++){
 		var arr = [];
 		dataset.push(arr);
@@ -29,6 +29,16 @@ document.querySelector("#exec").addEventListener("click", function(){
 		for(var j=0; j<hor; j++){
 			arr.push(1);
 			var td = document.createElement("td");
+			td.addEventListener("contextmenu", function(e){
+				e.preventDefault();
+				var 부모tr = e.currentTarget.parentNode;
+				var 부모tbody = e.currentTarget.parentNode.parentNode;
+				var 줄 = Array.prototype.indexOf.call(부모tr.children, e.currentTarget);
+				var 칸 = Array.prototype.indexOf.call(부모tbody.children, 부모tr);
+				console.log(부모tr, 부모tbody, e.currentTarget, 줄, 칸);
+				e.currentTarget.textContent = "!";
+				dataset[줄][칸] = "!";
+			});
 			tr.appendChild(td);
 		}
 		tbody.appendChild(tr);
